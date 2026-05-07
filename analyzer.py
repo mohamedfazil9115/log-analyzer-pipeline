@@ -4,10 +4,10 @@ warning_count = 0
 
 # Read log file
 with open("logs.txt", "r") as file:
-    lines = file.readlines()
+    logs = file.readlines()
 
 # Count log types
-for line in lines:
+for line in logs:
     if "INFO" in line:
         info_count += 1
     elif "ERROR" in line:

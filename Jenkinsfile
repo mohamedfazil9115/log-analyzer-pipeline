@@ -11,7 +11,7 @@ pipeline {
 
         stage('Run Python Script') {
             steps {
-                sh 'C:\Users\FAZIL\AppData\Local\Python\pythoncore-3.14-64\python.exe'
+                bat 'python analyzer.py'
             }
         }
 
