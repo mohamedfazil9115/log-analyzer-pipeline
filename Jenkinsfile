@@ -1,13 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    triggers {
+        pollSCM('* * * * *')
+    }
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/mohamedfazil9115/log-analyzer-pipeline.git'
-            }
-        }
+    stages {
 
         stage('Run Python Script') {
             steps {
@@ -20,9 +18,5 @@ pipeline {
                 archiveArtifacts artifacts: 'report.txt', fingerprint: true
             }
         }
-    }
-
-    triggers {
-        pollSCM('* * * * *')
     }
 }
